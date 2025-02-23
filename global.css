@@ -1,77 +1,74 @@
-body {
-    font: 100%/1.5 system-ui, sans-serif;
-    display: flex;
-    flex-flow: column;
-    max-width: 80em;
-    min-height: 100vh;
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    margin: auto;
-    padding: 1em;
+  }
+  
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    line-height: 1.5;
+    color: #2c3e50;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    max-width: 80em;
+    margin: 0 auto;
+    padding: 1.5rem;
   }
   
   header {
-    display: flex;
-    gap: 1em;
-    align-items: baseline;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 1.5rem;
   }
   
-  header label {
-    margin-left: auto;
-  }
-  
-  header time,
-  header em {
-    display: block;
-  }
-  
-  header em {
-    color: #666;
-    font-style: italic;
-  }
-  
-  #map {
-    position: relative;
-    height: 70vh;
-    margin: 1em 0;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  #map svg {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    z-index: 1;
-    pointer-events: none;
-  }
-  
-  #map svg circle {
-    --color-departures: steelblue;
-    --color-arrivals: darkorange;
-    --color: color-mix(
-      in oklch,
-      var(--color-departures) calc(100% * var(--departure-ratio)),
-      var(--color-arrivals)
-    );
-    fill: var(--color);
-    fill-opacity: 0.6;
-    stroke: white;
-    stroke-width: 1;
-    pointer-events: auto;
-  }
-  
-  .legend {
-    display: flex;
-    gap: 1em;
-    margin-block: 1em;
-    justify-content: center;
-  }
-  
-  .legend > div {
-    position: relative;
-    padding: 0.5em 2em;
-    background: var(--color);
-    color: white;
+  h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #1a73e8;
+    margin-bottom: 1.5rem;
     text-align: center;
-    flex: 1;
+  }
+  
+  label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    font-weight: 500;
+    color: #4a5568;
+  }
+  
+  input[type="range"] {
+    width: 100%;
+    height: 6px;
+    background: #e2e8f0;
+    border-radius: 3px;
+    appearance: none;
+    cursor: pointer;
+  }
+  input[type="range"]::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #1a73e8;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: transform 0.15s ease;
+  }
+  input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.1);
+  }
+  time,
+  em {
+    font-family: monospace;
+    font-size: 1.1rem;
+    color: #2d3748;
+    background: #edf2f7;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    width: fit-content;
   }

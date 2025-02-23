@@ -3,45 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BikePulse</title>
-  
-  <!-- Global Styles -->
+  <title>WheelWatching</title>
   <link rel="stylesheet" href="global.css">
-  
-  <!-- Favicon -->
+  <link rel="stylesheet" href="map.css">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  
-  <!-- Mapbox GL JS CSS -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
-  
-  <!-- D3.js -->
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  
-  <!-- Mapbox GL JS JavaScript -->
   <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
 </head>
 <body>
   <header>
-    <h1>🚴🏼‍♀️ BikePulse</h1>
+    <h1>🚴🏼‍♀️ WheelWatching</h1>
     <label>
       Filter by time:
       <input type="range" id="time-slider" min="-1" max="1440" value="-1">
       <time id="selected-time"></time>
       <em id="any-time">(any time)</em>
     </label>
-  </header>
-
+</header>
   <div id="map">
     <svg></svg>
   </div>
-
   <div class="legend">
     <div style="--departure-ratio: 1">More departures</div>
     <div style="--departure-ratio: 0.5">Balanced</div>
     <div style="--departure-ratio: 0">More arrivals</div>
   </div>
-
-  <!-- Load custom map initialization script -->
   <script src="map.js"></script>
 </body>
 </html>

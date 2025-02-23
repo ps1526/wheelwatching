@@ -1,0 +1,71 @@
+html,
+body {
+    margin: 0;
+    padding: 5;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+#map svg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+}
+
+#map svg circle {
+    fill-opacity: 80%;
+    stroke: white;
+    pointer-events: auto;
+
+    --color-departures: steelblue;
+    --color-arrivals: darkorange;
+    --color: color-mix(in oklch,
+            var(--color-departures) calc(100% * var(--departure-ratio)),
+            var(--color-arrivals));
+    fill: var(--color);
+}
+
+.legend {
+    background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+    font-family: system-ui, sans-serif;
+    font-size: 14px;
+    color: #333;
+    display: flex;
+    flex-direction: row;
+    gap: 42px;
+    backdrop-filter: blur(6px); /* Softens the background */
+}
+
+.legend div {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 500;
+}
+
+.legend div::before {
+    content: "";
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: color-mix(in oklch,
+            steelblue calc(100% * var(--departure-ratio)),
+            darkorange);
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
